@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+    <title>Prueba socket.io</title>
+</head>
+<body>
+    <div id='contenido'><button>Mandar saludo</button></div>
+    <script>
+        var server = io.connect('http://localhost:8080');
+
+        server.on('saludar', function(saludo) {
+            alert(saludo);
+        });
+
+        function saludar(){}
+            server.emit('saludar','hola Mundo !!!!');
+        }
+
+        function gatillarNotificacion(){}
+            server.emit('oanotificacion','ejecutar');
+        }
+    </script>
+</body>
+</html>
